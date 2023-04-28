@@ -66,10 +66,13 @@ static const char *voldown[]  = { "amixer", "-c", "Generic_1", "-qM", "set", "Ma
 static const char *volup[]    = { "amixer", "-c", "Generic_1", "-qM", "set", "Master", "2%+", NULL };
 static const char *openFirefox[]= { "firefox", NULL };
 static const char *flameshot[]= { "flameshot", "gui", NULL };
+static const char *rofi[]= { "rofi", "-show", "drun", "-theme", "onedark", NULL };
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
+	// { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = openFirefox } },
 	{ MODKEY|ShiftMask,             XK_Left,   spawn,          {.v = voldown } },
 	{ MODKEY|ShiftMask,             XK_Right,  spawn,          {.v = volup } },
